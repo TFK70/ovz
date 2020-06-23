@@ -1,0 +1,122 @@
+.feedbackCard {
+  position: fixed;
+  width: 80%;
+  height: 98%;
+  min-width: 80%;
+  min-height: 98%;
+  left: 10%;
+  top: 1%;
+  background-color: var(--dark--elements--color);
+  box-shadow: 0 0 10px black;
+}
+
+.feedbackCard button {
+  position: fixed;
+  height: 10%;
+  width: 5%;
+  right: 10%;
+  top: 1%;
+  font-size: 30px;
+  background-color: var(--dark--elements--color);
+  color: #fff;
+}
+
+.feedbackCard button:hover {
+  background-color: rgb(241, 30, 30);
+  box-shadow: 0 0 10px black;
+}
+
+.feedbackCard h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 60px;
+  font-family: "Aguafina";
+}
+
+.feedbackCard h2 {
+  color: #fff;
+  text-align: center;
+  font-size: 40px;
+  font-family: "Aguafina";
+}
+
+.feedbackCard textarea {
+  position: relative;
+  width: 70%;
+  height: 25%;
+  left: 15%;
+  top: 10vh;
+  font-size: 40px;
+  min-width: 70%;
+  min-height: 25%;
+  max-width: 70%;
+  max-height: 25%;
+  border: none;
+  outline: none;
+  background: none;
+  animation: blinkIn 1.5s ease-in-out forwards;
+  color: #fff;
+  font-family: "Aguafina";
+}
+
+.feedbackCard textarea + h2 {
+  margin-top: 150px;
+}
+
+.swipeBut {
+  position: fixed;
+  height: 98%;
+  width: 9%;
+  min-height: 98%;
+  min-width: 9%;
+  background-color: var(--dark--elements--color);
+  top: 1%;
+  color: #fff;
+  font-size: 100px;
+  text-align: center;
+  justify-content: center;
+  vertical-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 0 10px black;
+}
+
+.swipeBut:active {
+  background-color: #fff;
+  color: #000;
+}
+
+.swipeBut span {
+  position: relative;
+  top: 40%;
+}
+
+.swipeLeft {
+  left: 0.5%;
+}
+
+.swipeLeft:hover {
+  left: 0;
+}
+
+.swipeRight {
+  right: 0.5%;
+}
+
+.swipeRight:hover {
+  right: 0;
+}
+
+@media screen and (max-height: 650px) {
+  .feedbackCard {
+    overflow: scroll;
+  }
+
+  .swipeBut {
+    font-size: 45px;
+  }
+
+  .swipeBut span {
+    top: 50%;
+  }
+}

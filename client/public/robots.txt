@@ -1,0 +1,7 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow: /src/components/ShowFeedbacks
+Disallow: /src/components/Handler404
+Disallow: /src/components/Chat
+Disallow: /src/components/Feedback
+Disallow: /src/components/ChatLogin

@@ -1,0 +1,112 @@
+.form-wrap {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    left: 30%;
+}
+
+.form-wrap input {
+    position: relative;
+    width: 56.5%;
+    left: 0;
+}
+
+.inpOrderDetails {
+    border: none;
+    outline: none;
+    text-decoration: none;
+    width: 56.5%;
+    height: 20vh;
+    background: var(--dark--elements--color);
+    font-size: 5vh;
+    color: #fff;
+}
+
+.inpName {
+    margin-top: 13vh;
+    font-size: 5vh;
+}
+
+.inpContacts {
+    margin-top: 0;
+    font-size: 5vh;
+}
+
+.optionPick {
+    position: relative;
+    width: 100%;
+    margin-left: 0;
+    display: flex;
+    flex-direction: row;
+    animation: blinkIn 1.5s ease-in-out forwards;
+}
+
+.optionPick button {
+    overflow: hidden;
+    width: 28.5%;
+    font-size: 5vh;
+    min-height: 10vh;
+    max-height: 10vh;
+    margin-left: 0;
+}
+
+.optionPick button + button {
+    margin-left: 5px;
+}
+
+.button-active {
+    background-color: #fff;
+    color: #000;
+}
+
+.formSubmit {
+    overflow: hidden;
+    width: 56.5%;
+    font-size: 5vh;
+    min-height: 10vh;
+    max-height: 10vh;
+    margin-top: 10px;
+    margin-left: 0;
+}
+
+.wrong:active {
+    background-color: red;
+    transition: .2s;
+}
+
+.success:active {
+    background-color: greenyellow;
+    transition: .2s;
+}
+
+input + textarea {
+    margin-top: 10px;
+}
+
+input + .optionPick {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+    .form-wrap {
+        width: 160%;
+        left: 40%;
+    }
+
+    .optionPick button {
+        font-size: 4vh;
+    }
+}
+
+@keyframes wrong{
+    0% {
+        background-color: red;
+    }
+
+    100% {
+        background-color: #000;
+    }
+}

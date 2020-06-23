@@ -1,0 +1,287 @@
+.home {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.mobile-footer {
+  display: none;
+}
+
+.home h1 {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  font-size: 20vh;
+  z-index: 0;
+}
+
+.levitate {
+  position: absolute;
+  animation: levitate 50s ease-in-out infinite;
+}
+
+.show {
+  overflow: hidden;
+  animation: blinkIn .5s ease-in-out forwards;
+}
+
+.hide {
+  animation: blinkOut forwards;
+}
+
+.controller {
+  position: absolute;
+  left: 5%;
+  top: 2%;
+  transform: scale(2);
+  z-index: 9999;
+}
+
+.controller__triangle {
+  position: absolute;
+  margin: 0 auto;
+  margin-top: 10vh;
+  width: 20vh;
+  height: 20vh;
+  background-color: var(--dark--elements--color);
+  clip-path: polygon(50% 0%, 100% 80%, 0% 80%);
+  transition: .5s;
+  cursor: pointer;
+  transform: scale(0);
+  animation: scala 1.5s ease-in-out forwards;
+  animation-delay: 1.5s;
+}
+
+.controller__triangle:active .selector {
+  color: #000;
+}
+
+.controller__triangle .selector {
+  position: absolute;
+  color: white;
+  font-size: 8vh;
+  top: 50%;
+  left: 35%;
+  margin-top: -10vh;
+  transition: .5s;
+}
+
+.middle .selector {
+  font-size: 7vh;
+  margin-top: -5vh;
+  left: 40%;
+}
+
+.feedback .selector {
+  left: 40%;
+}
+
+.controller__triangle:hover {
+  background-color: #fff;
+}
+
+.controller__triangle:hover .selector {
+  color: #000;
+}
+
+.controller__triangle:active {
+  background-color: #000;
+  transition: .2s;
+}
+
+.controller__triangle:active .selector {
+  color: #fff;
+  transition: .2s;
+}
+
+.details {
+  left: 0;
+  top: 0;
+  clip-path: polygon(50% 80%, 100% 0%, 0% 0%);
+}
+
+.middle {
+  top: 0;
+  left: 10vh;
+}
+
+.middle:hover {
+  background-color: #000;
+}
+
+.middle:active {
+  background-color: #fff;
+}
+
+.middle:hover {
+  transform: none;
+}
+
+.chat {
+  left: 20vh;
+  top: 0;
+  clip-path: polygon(50% 80%, 100% 0%, 0% 0%);
+}
+
+.feedback {
+  left: 10vh;
+  top: 16vh;
+  clip-path: polygon(50% 80%, 100% 0%, 0% 0%);
+}
+
+.zoom {
+  z-index: 9999;
+  background-color: var(--background--color);
+  animation: zoomTriangle 1.5s ease-in-out forwards;
+}
+
+.zoom:hover {
+  background-color: var(--background--color);
+}
+
+.zoom:active {
+  background-color: var(--background--color);
+}
+
+.unzoom {
+  z-index: 9999;
+  background-color: var(--dark--elements--color);
+  animation: unzoomTriangle 1.5s ease-in-out forwards;
+}
+
+@keyframes zoomTriangle {
+  0% {}
+
+  100% {
+    transform: scale(25);
+  }
+}
+
+@keyframes unzoomTriangle {
+  0% {
+    transform: scale(25);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scala {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes levitate {
+  0% {
+    left: 50%;
+    top: 20%;
+  }
+
+  10% {
+    left: 48%;
+    top: 18%;
+  }
+
+  20% {
+    left: 52%;
+    top: 22%;
+  }
+
+  30% {
+    left: 50%;
+    top: 20%;
+  }
+
+  40% {
+    left: 52%;
+    top: 20%;
+  }
+
+  50% {
+    left: 52%;
+    top: 18%;
+  }
+
+  60% {
+    left: 50%;
+    top: 20%;
+  }
+
+  70% {
+    left: 48%;
+    top: 22%;
+  }
+
+  80% {
+    left: 50%;
+    top: 18%;
+  }
+
+  90% {
+    left: 50%;
+    top: 22%;
+  }
+
+  100% {
+    left: 50%;
+    top: 20%;
+  }
+}
+
+@media (max-width: 1200px){
+  .home h1 {
+    display: none;
+  }
+
+  .mobile-footer {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    bottom: 10%;
+    display: block;
+  }
+
+  .ovzh2 {
+    font-size: 20vw;
+    text-align: center;
+  }
+
+  .controller {
+    transform: scale(1.5);
+    top: 50%;
+    left: 50%;
+    margin-top: -45vh;
+    margin-left: -30vh;
+  }
+
+  .controller__triangle:active {
+    background-color: #fff;
+    transition: .2s;
+  }
+  
+  .controller__triangle:active .selector {
+    color: #000;
+    transition: .2s;
+  }
+}
+
+@media (max-width: 767px) {
+  .controller {
+    transform: scale(1.05);
+    top: 50%;
+    left: 50%;
+    margin-top: -30vh;
+    margin-left: -20vh;
+  }
+}
+
+@media (max-width: 319px) {
+}
