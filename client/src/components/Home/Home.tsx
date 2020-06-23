@@ -124,12 +124,12 @@ const Home = (props: any) => {
         >
           {!zoom ? "Feedback" : ""}
         </h1>
-        <h1 className={content === "OZ" ? "OZ show" : "OZ hide"}>
+        <h1 className={content === "OZ" ? (counter<10 ? "OZ show" : (counter>=20 ? (counter>=30 ? (counter>=50 ? (counter>=70 ? "OZ x70" : "OVZ x50") : "OZ x30") : "OZ x20" ): "OZ x10")) : "OZ hide"}>
         {!zoom ? (counter === 0 ? "OVZ" : (counter<100 ? `${counter}VZ` : `${counter}VZ!!!!!!!!!!`)) : ""}
         </h1>
       </div>
       <div className="mobile-footer">
-        <h2 className="ovzh2">{!zoom ? (counter === 0 ? "OVZ" : (counter<50 ? `${counter}VZ` : "Are you satisfied?")) : ""}</h2>
+        <h2 className="ovzh2">{!zoom ? (counter === 0 ? "OVZ" : (counter<100 ? `${counter}VZ` : `${counter}VZ!!!!!!!!!!`)) : ""}</h2>
       </div>
     </div>
   );

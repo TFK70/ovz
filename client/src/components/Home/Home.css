@@ -151,6 +151,26 @@
   animation: unzoomTriangle 1.5s ease-in-out forwards;
 }
 
+.x10 {
+  animation: x10 1s ease-in-out infinite;
+}
+
+.x20 {
+  animation: x20 1s ease-in-out infinite;
+}
+
+.x30 {
+  animation: x30 1s ease-in-out infinite;
+}
+
+.x50 {
+  animation: x50 1s ease-in-out infinite;
+}
+
+.x70 {
+  animation: x70 1s ease-in-out infinite;
+}
+
 @keyframes zoomTriangle {
   0% {}
 
@@ -233,6 +253,72 @@
   100% {
     left: 50%;
     top: 20%;
+  }
+}
+
+@keyframes x10 {
+  0% {}
+
+  50% {
+    font-size: 21vh;
+  }
+
+  100% {
+    font-size: 20vh;
+  }
+}
+
+@keyframes x20 {
+  0% {}
+
+  50% {
+    font-size: 22vh;
+  }
+
+  100% {
+    font-size: 20vh;
+  }
+}
+
+@keyframes x30 {
+  0% {}
+
+  50% {
+    font-size: 23vh;
+  }
+
+  100% {
+    font-size: 20vh;
+  }
+}
+
+@keyframes x50 {
+  0% {
+    transform: rotate(-15deg);
+  }
+
+  50% {
+    transform: rotate(15deg);
+  }
+
+  100% {
+    transform: rotate(-15deg);
+  }
+}
+
+@keyframes x70 {
+  0% {
+    transform: rotate(-20deg);
+  }
+
+  50% {
+    transform: rotate(20deg);
+    font-size: 23vh;
+  }
+
+  100% {
+    transform: rotate(-20deg);
+    font-size: 20vh;
   }
 }
 
