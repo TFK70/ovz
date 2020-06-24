@@ -40,7 +40,7 @@ const Details = () => {
 
     return(
         <div className="wrapper-details">
-            {topics.map((i: obj,idx: number) => idx%2===0 ? <Topic theme="white" topic={i.topic} content={i.content} /> : <Topic theme="black" topic={i.topic} content={i.content} />)}
+            {topics.map((i: obj,idx: number) => idx%2===0 ? <Topic key={idx} theme="white" topic={i.topic} content={i.content} /> : <Topic key={idx} theme="black" topic={i.topic} content={i.content} />)}
         </div>
     )
 }

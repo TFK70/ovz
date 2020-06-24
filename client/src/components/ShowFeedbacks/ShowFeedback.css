@@ -30,14 +30,12 @@
   color: #fff;
   text-align: center;
   font-size: 60px;
-  font-family: "Aguafina";
 }
 
 .feedbackCard h2 {
   color: #fff;
   text-align: center;
   font-size: 40px;
-  font-family: "Aguafina";
 }
 
 .feedbackCard textarea {
@@ -56,7 +54,6 @@
   background: none;
   animation: blinkIn 1.5s ease-in-out forwards;
   color: #fff;
-  font-family: "Aguafina";
 }
 
 .feedbackCard textarea + h2 {

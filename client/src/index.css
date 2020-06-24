@@ -5,13 +5,6 @@
   --dark--elements--color: #111111;
 }
 
-@font-face {
-  font-family: 'Aguafina';
-  font-style: normal;
-  font-weight: 400;
-  src: url('./fonts/AguafinaScript-Regular.ttf');
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -51,10 +44,13 @@ input {
   color: #fff;
   font-family: bold;
   text-align: center;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
   transition: 0.5s;
   outline: none;
   border-bottom: 5px solid grey;
-  animation: blinkIn 1.5s ease-in-out forwards;
+  -webkit-animation: blinkIn 1.5s ease-in-out forwards;
+          animation: blinkIn 1.5s ease-in-out forwards;
 }
 
 input + input {
@@ -81,15 +77,18 @@ input:focus::-webkit-input-placeholder {
 
 button {
   height: 20vh;
-  width: 90vh;
+  width: 100%;
   outline: none;
   border: none;
   background-color: var(--dark--elements--color);
   color: white;
   font-size: 10vh;
   cursor: pointer;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
   transition: 0.5s;
-  animation: blinkIn 1.5s ease-in-out forwards;
+  -webkit-animation: blinkIn 1.5s ease-in-out forwards;
+          animation: blinkIn 1.5s ease-in-out forwards;
 }
 
 button:hover {

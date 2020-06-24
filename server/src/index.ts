@@ -1,3 +1,6 @@
+import { Server } from "http";
+import { Socket } from "dgram";
+import { Request, Response } from "express";
 const express = require('express');
 const config = require('config');
 const http = require('http');
@@ -8,11 +11,11 @@ const mongoose = require('mongoose');
 const { db_connect, db } = require('./db');
 let { FeedbackSchema } = require('./models/Feedback');
 
-const PORT = config.get('port') || 4000;
+const PORT: number = config.get('port') || 4000;
 
 const app = express();
-const server = http.createServer(app);
-const io = socketIo(server);
+const server: Server = http.createServer(app);
+const io: Socket = socketIo(server);
 
 let Feedback = mongoose.model('Feedback', FeedbackSchema);
 
@@ -29,19 +32,19 @@ app.get('/getcards', (req,res) => {
     })
 })
 
-app.post('/deletefeedback/:id', (req,res) => {
+app.post('/deletefeedback/:id', (req: Request,res: Response) => {
     let id = req.params.id;
     Feedback.deleteOne({ _id: id }, (err) => {err ? console.error(err) : null})
 })
 
-app.get('/getcard/:id', (req,res) => {
+app.get('/getcard/:id', (req: Request,res: Response) => {
     let id = req.params.id;
     Feedback.findById(id, (err,fb) => {
         res.json(fb);
     })
 })
 
-app.post('/sendfeedback', (req,res) => {
+app.post('/sendfeedback', (req: Request,res: Response) => {
     let feedback = new Feedback(req.body);
     feedback.save()
     .then(fback => {
@@ -50,8 +53,8 @@ app.post('/sendfeedback', (req,res) => {
     .catch(e => res.status(400).send('Fail'));
 })
 
-io.on('connection', (socket) => {
-    socket.on('join', (room: string, cb) => {
+io.on('connection', (socket: any) => {
+    socket.on('join', (room: string, cb: CallableFunction) => {
         console.log(`New user in ${room} room`);
         socket.join(room);
 

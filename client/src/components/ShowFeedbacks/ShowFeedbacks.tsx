@@ -8,7 +8,7 @@ import { Handler404 } from "../Handler404/Handler404";
 const NoFeedbacks = () => {
   return (
     <div className="feedbackCard">
-      <textarea readOnly={true}>No feedbacks yet :c</textarea>
+      <textarea readOnly={true} defaultValue="No feedbacks yet :c"></textarea>
     </div>
   );
 };
