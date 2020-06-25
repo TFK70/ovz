@@ -9,4 +9,11 @@ const getCookie = (name: string) => {
   return matches ? decodeURIComponent(matches[1]) : undefined;
 };
 
-export { getCookie };
+const setCookie = (cname: string,val: string) => {
+  var d: Date = new Date();
+  d.setTime(d.getTime() + (365*24*60*60*1000));
+  var expires: string = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + val + "; " + expires + "; path=/";
+}
+
+export { getCookie, setCookie };

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import queryString from "query-string";
+import { setCookie } from '../../cookieAPI';
 import { STUDENTS_KEYWORD } from "../../config/config";
 import "./StudentsControl.css";
 
@@ -11,7 +12,7 @@ const Rejected = () => (
 
 const Success = () => {
     useEffect(() => {
-        document.cookie=`pw=${STUDENTS_KEYWORD}`;
+        setCookie('pw', STUDENTS_KEYWORD);
     }, []);
 
   return (

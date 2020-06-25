@@ -30,8 +30,8 @@ const Chat = () => {
 
     return () => {
       socket.emit("disconnect");
-    };
-  }, [linkClass]);
+    }; // eslint-disable-next-line
+  }, [/*Should be empty to avoid phantom reconnections (socket on join)*/]);
 
   return (
     <>
