@@ -12,6 +12,7 @@ body {
     "Chomsky", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: none;
   overflow: hidden;
   background-color: var(--background--color);
 }
@@ -53,6 +54,10 @@ input {
           animation: blinkIn 1.5s ease-in-out forwards;
 }
 
+input[type=text], input[type=submit] {
+  -webkit-appearance: none;
+}
+
 input + input {
   margin-top: 10px;
 }
@@ -75,6 +80,10 @@ input:focus::-webkit-input-placeholder {
   color: white;
 }
 
+Link {
+  -webkit-tap-highlight-color: transparent;
+}
+
 button {
   height: 20vh;
   width: 100%;
@@ -84,6 +93,9 @@ button {
   color: white;
   font-size: 10vh;
   cursor: pointer;
+  object-fit: contain;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;

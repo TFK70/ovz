@@ -14,6 +14,8 @@
   height: 100%;
   text-align: center;
   overflow: scroll;
+  overflow-y: auto;
+	-webkit-overflow-scrolling:touch;
   animation: blinkIn 1.5s ease-in-out forwards;
 }
 
