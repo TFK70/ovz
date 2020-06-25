@@ -9,6 +9,7 @@ import { Clients } from "./components/Clients/Clients";
 import { Feedback } from "./components/Feedback/Feedback";
 import { ShowFeedbacks } from "./components/ShowFeedbacks/ShowFeedbacks";
 import { Handler404 } from "./components/Handler404/Handler404";
+import { StudentsControl } from "./components/StudentsControl/StudentsControl";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/chat" exact component={ChatLogin} />
         <Route path="/showfb" exact component={ShowFeedbacks} />
         <Route path="/hGdjjrHskrWx" exact component={Chat} />
+        <Route path="/scontrol" exact component={StudentsControl} />
         <Route exact component={Handler404} />
         </Switch>
       </Router>

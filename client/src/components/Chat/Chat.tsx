@@ -3,6 +3,7 @@ import socketIOClient from "socket.io-client";
 import queryString from "query-string";
 import "./Chat.css";
 import {ENDPOINT} from '../../config/config';
+import { GoBack } from "../GoBack/GoBack";
 
 const socket = socketIOClient(ENDPOINT);
 
@@ -33,6 +34,8 @@ const Chat = () => {
   }, [linkClass]);
 
   return (
+    <>
+    <GoBack />
     <div className="wrapper-chat">
       <textarea className="chat-area" readOnly={true} value={inputValue} />
       <input
@@ -62,6 +65,7 @@ const Chat = () => {
       >Link
       </a>
     </div>
+    </>
   );
 };
 

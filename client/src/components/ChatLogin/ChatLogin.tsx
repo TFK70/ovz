@@ -1,17 +1,25 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { getCookie } from '../../cookieAPI';
+import { STUDENTS_KEYWORD } from '../../config/config';
 import "./ChatLogin.css";
+import { StudentsControl } from "../StudentsControl/StudentsControl";
+import { GoBack } from "../GoBack/GoBack";
 
 const ChatLogin = () => {
   let [room, setRoom] = useState<string>("");
 
-  return (
+  if (getCookie("pw")!==STUDENTS_KEYWORD) return <StudentsControl />
+  else return (
+    <>
+    <GoBack />
     <div className="wrapper-join">
       <input type="text" className="roomInp" placeholder="Room name" onChange={(e) => setRoom(e.target.value)}/>
       <Link onClick={(e) => !room ? e.preventDefault() : null} to={`/hGdjjrHskrWx?room=${room}`}>
         <button className="joinBut">Join</button>
       </Link>
     </div>
+    </>
   );
 };
 

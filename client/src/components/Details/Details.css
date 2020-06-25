@@ -1,35 +1,46 @@
 .topic--theme-black {
-    --topic-bg: #000;
-    --topic-font: #fff;
+  --topic-bg: #000;
+  --topic-font: #fff;
 }
 
 .topic--theme-white {
-    --topic-bg: #fff;
-    --topic-font: #000;
+  --topic-bg: #fff;
+  --topic-font: #000;
 }
 
 .wrapper-details {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    overflow: scroll;
-    animation: blinkIn 1.5s ease-in-out forwards;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: scroll;
+  animation: blinkIn 1.5s ease-in-out forwards;
 }
 
 .topic {
-    margin-top: 0;
-    background-color: var(--topic-bg);
-    height: 100%;
-    width: 100%;
-    color: var(--topic-font);
-    overflow: hidden;
+  margin-top: 0;
+  background-color: var(--topic-bg);
+  height: 100%;
+  width: 100%;
+  color: var(--topic-font);
+  overflow: hidden;
 }
 
 .topic__h {
-    font-size: 15vh;
+  font-size: 15vh;
 }
 
 .topic__p {
-    font-size: 3vh;
+  font-size: 3vh;
+}
+
+.detailsBack {
+  width: 100%;
+  margin-top: 0;
+  color: #000;
+  background: none;
+  overflow: hidden;
+  text-decoration: none;
+  outline: none;
+  border: none;
 }
