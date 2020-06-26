@@ -22,8 +22,8 @@ let Feedback = mongoose.model('Feedback', FeedbackSchema);
 app.use(cors());
 app.use(bodyParser.json());
 
-app.get('/getcards', (req,res) => {
-    Feedback.find((err,fbs) => {
+app.get('/getcards', (req: Request,res: Response) => {
+    Feedback.find((err: Error,fbs: object) => {
         if (err) {
             console.error(err);
         } else {
@@ -39,7 +39,7 @@ app.post('/deletefeedback/:id', (req: Request,res: Response) => {
 
 app.get('/getcard/:id', (req: Request,res: Response) => {
     let id = req.params.id;
-    Feedback.findById(id, (err,fb) => {
+    Feedback.findById(id, (err: Error,fb: object) => {
         res.json(fb);
     })
 })
@@ -55,7 +55,6 @@ app.post('/sendfeedback', (req: Request,res: Response) => {
 
 io.on('connection', (socket: any) => {
     socket.on('join', (room: string, cb: CallableFunction) => {
-        console.log(`New user in ${room} room`);
         socket.join(room);
 
         socket.on('newVal', (val: string) => {

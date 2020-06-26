@@ -85,9 +85,6 @@ const Feedback = () => {
 
                   axios
                     .post(ENDPOINT + "/sendfeedback", newFeedback)
-                    .then((response) => {
-                      console.log(response.data);
-                    })
                     .catch((err) => console.error(err));
 
                   setName("");

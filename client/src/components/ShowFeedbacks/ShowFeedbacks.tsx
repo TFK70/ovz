@@ -22,7 +22,6 @@ const FeedbackCard = (props: any) => {
       <h2>Contacts: {props.fb.contacts}</h2>
       <button onClick={() => {
         axios.post(ENDPOINT + '/deletefeedback/' + props.fb._id)
-        .then(() => console.log(props.fb._id, 'deleted'))
         .catch(e => console.error(e));
         window.location.reload();
       }}>X</button>
