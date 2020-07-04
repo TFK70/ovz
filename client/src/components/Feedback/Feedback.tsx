@@ -4,6 +4,8 @@ import axios from "axios";
 import { ENDPOINT } from "../../config/config";
 import "./Feedback.css";
 import { GoBack } from "../GoBack/GoBack";
+import { Input } from "../Input/Input";
+import { Button } from "../Button/Button";
 
 const Feedback = () => {
   const [name, setName] = useState<string>("");
@@ -23,56 +25,52 @@ const Feedback = () => {
     <>
       <GoBack />
       <div className="form-wrap">
-        <form className="feedbackForm">
-          <input
+          <Input
             type="text"
-            className="inpName"
             placeholder="Your name"
-            onChange={(e) => setName(e.target.value)}
+            changeEvent={(e: Event | any) => setName(e.target.value)}
             value={name}
           />
           <div className="optionPick">
-            <button
-              className={option === "Translation" ? "button-active" : ""}
-              onClick={(e) => {
+            <Button
+              class={option === "Translation" ? "button-active" : ""}
+              val="Translation"
+              clickEvent={(e: Event | any) => {
                 option === "Translation"
                   ? setOption("")
                   : setOption("Translation");
                 e.preventDefault();
               }}
-            >
-              Translation
-            </button>
-            <button
-              className={option === "Training" ? "button-active" : ""}
-              onClick={(e) => {
+            />
+            <Button
+              class={option === "Training" ? "button-active" : ""}
+              val="Training"
+              clickEvent={(e: Event | any) => {
                 option === "Training" ? setOption("") : setOption("Training");
                 e.preventDefault();
               }}
-            >
-              Training
-            </button>
+            />
           </div>
-          <input
-            type="text"
-            className="inpContacts"
-            placeholder="Your contacts"
-            onChange={(e) => setContacts(e.target.value)}
-            value={contacts}
-          />
           <textarea
-            className="inpOrderDetails"
+            className="orderDetails"
             placeholder="Order details"
             onChange={(e) => setDetails(e.target.value)}
             value={details}
           />
+          <Input
+            type="text"
+            placeholder="Your contacts"
+            changeEvent={(e: Event | any) => setContacts(e.target.value)}
+            value={contacts}
+          />
           <Link to="/">
-            <button
+            <Button
               type="submit"
-              className={
+              val="Send"
+              class={
                 formValidator() ? "formSubmit success" : "formSubmit wrong"
               }
-              onClick={(e) => {
+              clickEvent={(e: Event | any) => {
                 e.preventDefault();
 
                 if (formValidator()) {
@@ -93,11 +91,8 @@ const Feedback = () => {
                   setDetails("");
                 }
               }}
-            >
-              Send
-            </button>
+            />
           </Link>
-        </form>
       </div>
     </>
   );

@@ -1,0 +1,47 @@
+.inpInitial {
+  width: 45%;
+  height: 20%;
+  min-width: 45%;
+  min-width: 20%;
+  font-size: 40px;
+  color: #fff;
+  font-family: bold;
+  text-align: center;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  border-bottom: 5px solid grey;
+  background: var(--dark--elements--color);
+  -webkit-animation: blinkIn 1.5s ease-in-out forwards;
+  animation: blinkIn 1.5s ease-in-out forwards;
+}
+
+.inpInitial + .inpInitial {
+  margin-top: 10px;
+}
+
+.inpInitial:focus {
+  border-bottom: 5px solid #fff;
+}
+
+.inpInitial::-webkit-input-placeholder {
+  transition: 0.5s;
+}
+
+.inpInitial:hover::-webkit-input-placeholder {
+  color: white;
+}
+
+.inpInitial:focus::-webkit-input-placeholder {
+  text-indent: 1000px;
+  transition: 0.3s;
+  color: white;
+}
+
+@media (max-width: 767px) {
+  .inpInitial {
+    font-size: 5vh;
+    width: 60%;
+  }
+}

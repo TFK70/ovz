@@ -5,6 +5,8 @@ import { STUDENTS_KEYWORD } from '../../config/config';
 import "./ChatLogin.css";
 import { StudentsControl } from "../StudentsControl/StudentsControl";
 import { GoBack } from "../GoBack/GoBack";
+import { Input } from "../Input/Input";
+import { Button } from "../Button/Button";
 
 const ChatLogin = () => {
   let [room, setRoom] = useState<string>("");
@@ -14,9 +16,10 @@ const ChatLogin = () => {
     <>
     <GoBack />
     <div className="wrapper-join">
-      <input type="text" className="roomInp" placeholder="Room name" onChange={(e) => setRoom(e.target.value)}/>
+      <Input type="text" placeholder="Room name" changeEvent={(e: Event | any) => setRoom(e.target.value)} />    
       <Link onClick={(e) => !room ? e.preventDefault() : null} to={`/hGdjjrHskrWx?room=${room}`}>
-        <button className="joinBut">Join</button>
+        <Button val="Join" />
+        {/* <button className="joinBut">Join</button> */}
       </Link>
     </div>
     </>

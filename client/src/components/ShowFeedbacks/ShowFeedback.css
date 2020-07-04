@@ -38,7 +38,7 @@
   font-size: 40px;
 }
 
-.feedbackCard textarea {
+.showfbArea {
   position: relative;
   width: 70%;
   height: 25%;
@@ -56,7 +56,7 @@
   color: #fff;
 }
 
-.feedbackCard textarea + h2 {
+.showfbArea + h2 {
   margin-top: 150px;
 }
 

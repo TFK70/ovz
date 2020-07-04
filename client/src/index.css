@@ -35,84 +35,16 @@ textarea {
   animation: blinkIn 1.5s ease-in-out forwards;
 }
 
-input {
-  width: 45%;
-  height: 20%;
-  min-width: 45%;
-  min-width: 20%;
-  font-size: 40px;
-  background-color: var(--dark--elements--color);
-  color: #fff;
-  font-family: bold;
-  text-align: center;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
-  outline: none;
-  border-bottom: 5px solid grey;
-  -webkit-animation: blinkIn 1.5s ease-in-out forwards;
-          animation: blinkIn 1.5s ease-in-out forwards;
-}
-
-input[type=text], input[type=submit] {
-  -webkit-appearance: none;
-}
-
-input + input {
-  margin-top: 10px;
-}
-
-input:focus {
-  border-bottom: 5px solid #fff;
-}
-
-input::-webkit-input-placeholder {
-  transition: 0.5s;
-}
-
-input:hover::-webkit-input-placeholder {
-  color: white;
-}
-
-input:focus::-webkit-input-placeholder {
-  text-indent: 1000px;
-  transition: 0.3s;
-  color: white;
-}
-
 Link {
   -webkit-tap-highlight-color: transparent;
 }
 
-button {
-  height: 20vh;
-  width: 100%;
-  outline: none;
-  border: none;
-  background-color: var(--dark--elements--color);
-  color: white;
-  font-size: 10vh;
-  cursor: pointer;
-  object-fit: contain;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-appearance: none;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
-  -webkit-animation: blinkIn 1.5s ease-in-out forwards;
-          animation: blinkIn 1.5s ease-in-out forwards;
-}
 
-button:hover {
-  background-color: #fff;
-  color: #000;
-}
-
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
   input {
     font-size: 5vh;
   }
-}
+} */
 
 @keyframes blinkOut {
   0% {

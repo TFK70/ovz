@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Details.css";
 import { Link } from "react-router-dom";
+import { SwitchLang } from '../SwitchLang/SwitchLang';
 
 const Topic = (props: any) => {
   return (
@@ -22,12 +23,41 @@ const DetailsBack = () => {
 };
 
 const Details = () => {
+  const [lang, setLang] = useState("ENG");
+
   type obj = {
     topic: String;
     content: String;
   };
 
-  let topics: obj[] = [
+
+  let topicsRu: obj[] = [
+    {
+      topic: "Тема 1",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quia!",
+    },
+
+    {
+      topic: "Тема 2",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quia!",
+    },
+
+    {
+      topic: "Тема 3",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quia!",
+    },
+
+    {
+      topic: "Тема 4",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam expedita optio eius sit, unde iure illo harum minima doloribus similique! Nisi consectetur nam ad officiis, voluptates suscipit nobis amet fuga.",
+    },
+  ];
+
+  let topicsEng: obj[] = [
     {
       topic: "Topic 1",
       content:
@@ -53,8 +83,13 @@ const Details = () => {
     },
   ];
 
+  let topics: obj[] = [];
+
+  lang==="ENG" ? topics=topicsEng : topics=topicsRu;
+
   return (
     <div className="wrapper-details">
+      <SwitchLang lang={lang} eventSwitch={() => lang==="RU" ? setLang("ENG") : setLang("RU")} />
       {topics.map((i: obj, idx: number) =>
         idx % 2 === 0 ? (
           <Topic key={idx} theme="white" topic={i.topic} content={i.content} />

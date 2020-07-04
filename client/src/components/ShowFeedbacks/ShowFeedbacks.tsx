@@ -18,7 +18,7 @@ const FeedbackCard = (props: any) => {
     <div className="feedbackCard">
       <h1>{props.fb.option}</h1>
       <h2>Name: {props.fb.name}</h2>
-      <textarea readOnly={true} value={props.fb.details}></textarea>
+      <textarea className="showfbArea" readOnly={true} value={props.fb.details}></textarea>
       <h2>Contacts: {props.fb.contacts}</h2>
       <button onClick={() => {
         axios.post(ENDPOINT + '/deletefeedback/' + props.fb._id)

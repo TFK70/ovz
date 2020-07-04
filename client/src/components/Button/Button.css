@@ -1,0 +1,29 @@
+.initialBut {
+  height: 20vh;
+  width: 45%;
+  outline: none;
+  border: none;
+  background-color: var(--dark--elements--color);
+  color: white;
+  font-size: 10vh;
+  cursor: pointer;
+  object-fit: contain;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: blinkIn 1.5s ease-in-out forwards;
+  animation: blinkIn 1.5s ease-in-out forwards;
+}
+
+.initialBut:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+@media (max-width: 767px) {
+  .initialBut {
+    width: 60%;
+  }
+}
