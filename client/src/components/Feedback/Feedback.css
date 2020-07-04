@@ -6,6 +6,7 @@
   height: 100%;
   left: 30%;
   top: 8%;
+  overflow: hidden;
 }
 
 .orderDetails {

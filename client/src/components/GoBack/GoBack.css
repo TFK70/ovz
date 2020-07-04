@@ -14,6 +14,8 @@
     opacity: .3;
     text-align: center;
     font-size: 5vh;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
     transition: .5s;
 }
 

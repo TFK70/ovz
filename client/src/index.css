@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 /* MUTUAL STYLES */
 
 :root {
@@ -32,19 +39,23 @@ code {
 }
 
 textarea {
-  animation: blinkIn 1.5s ease-in-out forwards;
+  -webkit-animation: blinkIn 1.5s ease-in-out forwards;
+          animation: blinkIn 1.5s ease-in-out forwards;
 }
 
 Link {
   -webkit-tap-highlight-color: transparent;
 }
 
-
-/* @media (max-width: 767px) {
-  input {
-    font-size: 5vh;
+@-webkit-keyframes blinkOut {
+  0% {
+    opacity: 1;
   }
-} */
+
+  100% {
+    opacity: 0;
+  }
+}
 
 @keyframes blinkOut {
   0% {
@@ -53,6 +64,16 @@ Link {
 
   100% {
     opacity: 0;
+  }
+}
+
+@-webkit-keyframes blinkIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 

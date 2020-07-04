@@ -26,6 +26,7 @@
 }
 
 .inpInitial::-webkit-input-placeholder {
+  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
@@ -35,6 +36,7 @@
 
 .inpInitial:focus::-webkit-input-placeholder {
   text-indent: 1000px;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
   color: white;
 }
