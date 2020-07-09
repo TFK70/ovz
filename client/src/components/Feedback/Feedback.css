@@ -5,7 +5,7 @@
   width: 100%;
   height: 100%;
   left: 30%;
-  top: 8%;
+  top: 5%;
   overflow: hidden;
 }
 
@@ -51,7 +51,6 @@
   font-size: 5vh;
   min-height: 10vh;
   max-height: 10vh;
-  margin-top: 10px;
   margin-left: 0;
 }
 
@@ -70,9 +69,9 @@ input + .optionPick {
   margin-bottom: 10px;
 }
 
-.orderDetails + input {
+/* .orderDetails + input {
   margin-top: 10px;
-}
+} */
 
 @media screen and (max-width: 1000px) {
   /* .form-wrap {

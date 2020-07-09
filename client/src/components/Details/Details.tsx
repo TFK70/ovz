@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Details.css";
-import { Link } from "react-router-dom";
 import { SwitchLang } from '../SwitchLang/SwitchLang';
+import { GoBack } from "../GoBack/GoBack";
 
 const Topic = (props: any) => {
   return (
@@ -9,16 +9,6 @@ const Topic = (props: any) => {
       <h1 className="topic__h">{props.topic}</h1>
       <p className="topic__p">{props.content}</p>
     </div>
-  );
-};
-
-const DetailsBack = () => {
-  return (
-    <>
-      <Link to="/">
-        <button className="detailsBack">{"<"}</button>
-      </Link>
-    </>
   );
 };
 
@@ -97,7 +87,7 @@ const Details = () => {
           <Topic key={idx} theme="black" topic={i.topic} content={i.content} />
         )
       )}
-      <DetailsBack />
+      <GoBack class="detailsBack">{"<"}</GoBack>
     </div>
   );
 };
