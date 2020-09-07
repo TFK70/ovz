@@ -61,9 +61,10 @@ const Home = (props: any) => {
   };
 
   return (
-    <div ref={ref} className="home">
+    <div ref={ref} className="home" translate="no">
       <div
         className="controller"
+        translate="no"
         onMouseLeave={() => {
           setContent("OZ");
           setCounter(0);
@@ -75,7 +76,7 @@ const Home = (props: any) => {
             onMouseEnter={() => setContent("Details")}
             onClick={() => setZoom(true)}
           >
-            <div className="selector">{!zoom ? "D" : ""}</div>
+            <div className="selector" translate="no">{!zoom ? "D" : ""}</div>
           </div>
         </Link>
         <Link to="/clients" onClick={delayRedirectToChat}>
@@ -84,7 +85,7 @@ const Home = (props: any) => {
             onMouseEnter={() => setContent("Extra")}
             onClick={() => setZoom(true)}
           >
-            <div className="selector">{!zoom ? "E" : ""}</div>
+            <div className="selector" translate="no">{!zoom ? "E" : ""}</div>
           </div>
         </Link>
         <div
@@ -104,7 +105,7 @@ const Home = (props: any) => {
             onMouseEnter={() => setContent("Feedback")}
             onClick={() => setZoom(true)}
           >
-            <div className="selector">{!zoom ? "F" : ""}</div>
+            <div className="selector" translate="no">{!zoom ? "F" : ""}</div>
           </div>
         </Link>
       </div>

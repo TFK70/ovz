@@ -7,7 +7,7 @@ const Topic = (props: any) => {
   return (
     <div className={`topic topic--theme-${props.theme}`}>
       <h1 className="topic__h">{props.topic}</h1>
-      <p className="topic__p">{props.content}</p>
+      {props.content.map((i: any) => <p className="topic__p">{i}</p>)}
     </div>
   );
 };
@@ -17,59 +17,41 @@ const Details = () => {
 
   type obj = {
     topic: String;
-    content: String;
+    content: Array<String>;
   };
 
 
   let topicsRu: obj[] = [
     {
-      topic: "Тема 1",
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quia!",
+      topic: "Общая информация",
+      content: ["Опытный преподаватель и переводчик английского языка. Стаж как преподавателя - более 15 лет, из них 10 лет - в университете на факультете международных отношений. Стаж работы переводчиком - более 17 лет.", "За время учебы в аспирантуре опубликовано около 30 научных работ на тему лингвистической интеграции иммигрантов в принимающее общество.", "Сотрудничала как переводчик и преподаватель с российскими и иностранными компаниями. Ездила в командировки в такие страны как Австрия, Соединённое Королевство, Чехия, Венгрия, Италия, Ливан и США.", "Отзывы и рекомендации по запросу."]
     },
 
     {
-      topic: "Тема 2",
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quia!",
+      topic: "Уроки",
+      content: ["Индивидуальный подход ко всем студентам, удобное расписание, современные методы обучения и оборудование для развития всех лингвистических компетенций таких как чтение, говорение, аудирование, письмо и грамматика. Особое внимание уделяется произношению.", "Подготовка к любым экзаменам таким как ЕГЭ, ОГЭ, IELTS, TOEFL, CAE, CEF.", "Онлайн / оффлайн групповые и индивидуальные занятия."]
     },
 
     {
-      topic: "Тема 3",
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quia!",
-    },
-
-    {
-      topic: "Тема 4",
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam expedita optio eius sit, unde iure illo harum minima doloribus similique! Nisi consectetur nam ad officiis, voluptates suscipit nobis amet fuga.",
+      topic: "Перевод",
+      content: ["Гарантирую быстрый и качественный перевод текстов любой сложности. Возможен синхронный перевод.", "Имею опыт устного и письменного перевода в следующих сферах: авиация (авиастроение, покраска и ремонт), бизнес, экономика, торговля, металлургия, неврология, социология, политика, программирование, онлайн азартные игры, вентиляция и кондиционирование."]
     },
   ];
 
   let topicsEng: obj[] = [
     {
-      topic: "Topic 1",
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quia!",
+      topic: "General info",
+      content: ["An experienced English teacher / translator with over 15 years’ experience in teaching, including 10 years’ experience working as a university professor at the international relation department, and over 17 years’ experience in translating and interpreting.", "Published about 30 scientific works on linguistic integration of immigrants into a host society while doing a PhD.", "Work for Russian and Foreign companies. A great number of business trips to different countries e.g. Austria, the UK, the Czech Republic, Hungary, Italy, Lebanon and the USA.", "References and recommendation available on request"]
     },
 
     {
-      topic: "Topic 2",
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quia!",
+      topic: "Lessons",
+      content: ["Individual approach to all students, comfortable timetable, state-of-the-art methods and facilities, to develop all linguistic competences such as reading, speaking, listening, writing and grammar. A special attention is devoted to pronunciation.", "The aim is to provide a fun and relaxed learning environment for all students.", "Preparation for any exams e.g. Russian state exams, IELTS, TOEFL, CAE, CEF etc.", "Online / offline group and individual lessons."]
     },
 
     {
-      topic: "Topic 3",
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quia!",
-    },
-
-    {
-      topic: "Topic 4",
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam expedita optio eius sit, unde iure illo harum minima doloribus similique! Nisi consectetur nam ad officiis, voluptates suscipit nobis amet fuga.",
+      topic: "Translation",
+      content: ["Quality and fast translation is guaranteed. Instant interpretation is available.", "Experience in the following spheres of translation / interpretation: aviation (plane construction, painting and repair), business, economics, trade, metallurgy, neurology, sociology, politics, programming, online gambling, ventilation and conditioning."]
     },
   ];
 

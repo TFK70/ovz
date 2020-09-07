@@ -1,3 +1,3 @@
-export const ENDPOINT: string = "http://localhost:4000";
-export const KEYWORD: string = "KEYWORD000";
-export const STUDENTS_KEYWORD: string = "STUDENTS_KEYWORD000";
+export const ENDPOINT: string = "???";
+export const KEYWORD: string = "???";
+export const STUDENTS_KEYWORD: string = "???";

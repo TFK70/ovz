@@ -1,4 +1,4 @@
 {
-    "port": 4000,
-    "mongoUri": "mongodb+srv://root:root@feedbackfromovz-zuhdg.mongodb.net/feedbacks?retryWrites=true&w=majority"
+    "port": ???,
+    "mongoUri": "???"
 }

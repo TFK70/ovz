@@ -24,14 +24,14 @@ const Feedback = () => {
   return (
     <>
       <GoBack />
-      <div className="form-wrap">
+      <div className="form-wrap" translate="no">
           <Input
             type="text"
             placeholder="Your name"
             changeEvent={(e: Event | any) => setName(e.target.value)}
             value={name}
           />
-          <div className="optionPick">
+          <div className="optionPick" translate="no">
             <Button
               class={option === "Translation" ? "button-active" : ""}
               val="Translation"

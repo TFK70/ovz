@@ -22,18 +22,18 @@
 .topic {
   margin-top: 0;
   background-color: var(--topic-bg);
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   color: var(--topic-font);
   overflow: hidden;
 }
 
 .topic__h {
-  font-size: 15vh;
+  font-size: 10vh;
 }
 
 .topic__p {
-  font-size: 3vh;
+  font-size: 4vh;
 }
 
 .detailsBack {
@@ -53,4 +53,14 @@
 
 .detailsBack:hover {
   background-color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .topic__h {
+    font-size: 7vh;
+  }
+
+  .topic__p {
+    font-size: 3vh;
+  }
 }

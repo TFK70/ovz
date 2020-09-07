@@ -1,9 +1,12 @@
 import { Server } from "http";
 import { Socket } from "dgram";
 import { Request, Response } from "express";
+const fs = require('fs');
+const path = require('path');
 const express = require('express');
 const config = require('config');
 const http = require('http');
+const https = require('https');
 const cors = require('cors');
 const bodyParser = require('body-parser')
 const socketIo = require('socket.io');
@@ -12,14 +15,29 @@ const { db_connect, db } = require('./db');
 let { FeedbackSchema } = require('./models/Feedback');
 
 const PORT: number = config.get('port') || 4000;
+const HTTPPORT: number = 4001;
+
+const privateKey = fs.readFileSync(path.join(__dirname, 'private.key'));
+const certificate = fs.readFileSync(path.join(__dirname, 'main.crt'));
 
 const app = express();
-const server: Server = http.createServer(app);
-const io: Socket = socketIo(server);
+
+const credentials: any = {key: privateKey, cert: certificate};
 
 let Feedback = mongoose.model('Feedback', FeedbackSchema);
 
-app.use(cors());
+const httpServer: Server = http.createServer(app);
+const httpsServer: Server = https.createServer(credentials,app);
+
+const io: Socket = socketIo(httpsServer);
+
+app.use(cors({
+  origin: function(origin, callback){
+    return callback(null, true);
+  },
+  optionsSuccessStatus: 200,
+  credentials: true
+}));
 app.use(bodyParser.json());
 
 app.get('/getcards', (req: Request,res: Response) => {
@@ -75,6 +93,10 @@ db.once('open', () => {
     console.log('Connected to db');
 })
 
-server.listen(PORT, () => {
-    console.log(`Server is listening on port ${PORT}...`);
+httpServer.listen(HTTPPORT, () => {
+    console.log(`HTTP Server is listening on port ${HTTPPORT}...`);
+})
+
+httpsServer.listen(PORT, () => {
+    console.log(`HTTPS Server is listening on port ${PORT}`)
 })
