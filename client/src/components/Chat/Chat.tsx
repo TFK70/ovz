@@ -5,6 +5,7 @@ import "./Chat.css";
 import { ENDPOINT } from "../../config/config";
 import { GoBack } from "../GoBack/GoBack";
 import { Input } from "../Input/Input";
+import { ChangeEvent } from "react";
 
 const socket = socketIOClient(ENDPOINT);
 
@@ -53,7 +54,7 @@ const Chat = () => {
         <Input
           type="text"
           placeholder="Your text"
-          changeEvent={(e: Event | any) =>
+          changeEvent={(e: ChangeEvent<HTMLInputElement>) =>
             socket.emit("newVal", e.target.value)
           }
         />
@@ -61,7 +62,7 @@ const Chat = () => {
           type="url"
           placeholder="Your link"
           class="forLink"
-          changeEvent={(e: Event | any) =>
+          changeEvent={(e: ChangeEvent<HTMLInputElement>) =>
             socket.emit("newLink", e.target.value)
           }
         />

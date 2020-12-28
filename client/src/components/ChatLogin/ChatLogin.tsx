@@ -7,6 +7,8 @@ import { StudentsControl } from "../StudentsControl/StudentsControl";
 import { GoBack } from "../GoBack/GoBack";
 import { Input } from "../Input/Input";
 import { Button } from "../Button/Button";
+import { MouseEvent } from "react";
+import { ChangeEvent } from "react";
 
 const ChatLogin = () => {
   let [room, setRoom] = useState<string>("");
@@ -16,8 +18,8 @@ const ChatLogin = () => {
     <>
     <GoBack />
     <div className="wrapper-join">
-      <Input type="text" placeholder="Room name" changeEvent={(e: Event | any) => setRoom(e.target.value)} />    
-      <Link onClick={(e) => !room ? e.preventDefault() : null} to={`/hGdjjrHskrWx?room=${room}`}>
+      <Input type="text" placeholder="Room name" changeEvent={(e: ChangeEvent<HTMLInputElement>) => setRoom(e.target.value)} />
+      <Link onClick={(e: MouseEvent) => !room ? e.preventDefault() : null} to={`/hGdjjrHskrWx?room=${room}`}>
         <Button val="Join" />
         {/* <button className="joinBut">Join</button> */}
       </Link>

@@ -6,6 +6,8 @@ import "./Feedback.css";
 import { GoBack } from "../GoBack/GoBack";
 import { Input } from "../Input/Input";
 import { Button } from "../Button/Button";
+import { ChangeEvent } from "react";
+import { MouseEvent } from "react";
 
 const Feedback = () => {
   const [name, setName] = useState<string>("");
@@ -28,14 +30,14 @@ const Feedback = () => {
           <Input
             type="text"
             placeholder="Your name"
-            changeEvent={(e: Event | any) => setName(e.target.value)}
+            changeEvent={(e: ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
             value={name}
           />
           <div className="optionPick" translate="no">
             <Button
-              class={option === "Translation" ? "button-active" : ""}
+              classVal={option === "Translation" ? "button-active" : ""}
               val="Translation"
-              clickEvent={(e: Event | any) => {
+              clickEvent={(e: MouseEvent) => {
                 option === "Translation"
                   ? setOption("")
                   : setOption("Translation");
@@ -43,9 +45,9 @@ const Feedback = () => {
               }}
             />
             <Button
-              class={option === "Training" ? "button-active" : ""}
+              classVal={option === "Training" ? "button-active" : ""}
               val="Training"
-              clickEvent={(e: Event | any) => {
+              clickEvent={(e: MouseEvent) => {
                 option === "Training" ? setOption("") : setOption("Training");
                 e.preventDefault();
               }}
@@ -54,23 +56,23 @@ const Feedback = () => {
           <textarea
             className="orderDetails"
             placeholder="Order details"
-            onChange={(e) => setDetails(e.target.value)}
+            onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setDetails(e.target.value)}
             value={details}
           />
           <Input
             type="text"
             placeholder="Your contacts"
-            changeEvent={(e: Event | any) => setContacts(e.target.value)}
+            changeEvent={(e: ChangeEvent<HTMLInputElement>) => setContacts(e.target.value)}
             value={contacts}
           />
           <Link to="/">
             <Button
               type="submit"
               val="Send"
-              class={
+              classVal={
                 formValidator() ? "formSubmit success" : "formSubmit wrong"
               }
-              clickEvent={(e: Event | any) => {
+              clickEvent={(e: MouseEvent) => {
                 e.preventDefault();
 
                 if (formValidator()) {

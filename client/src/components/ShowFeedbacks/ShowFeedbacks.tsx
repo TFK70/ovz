@@ -13,15 +13,15 @@ const NoFeedbacks = () => {
   );
 };
 
-const FeedbackCard = (props: any) => {
+const FeedbackCard = ({ fb } : { fb: { option: string, name: string, contacts: string, details: string, _id: number } }) => {
   return (
     <div className="feedbackCard">
-      <h1>{props.fb.option}</h1>
-      <h2>Name: {props.fb.name}</h2>
-      <textarea className="showfbArea" readOnly={true} value={props.fb.details}></textarea>
-      <h2>Contacts: {props.fb.contacts}</h2>
+      <h1>{fb.option}</h1>
+      <h2>Name: {fb.name}</h2>
+      <textarea className="showfbArea" readOnly={true} value={fb.details}></textarea>
+      <h2>Contacts: {fb.contacts}</h2>
       <button onClick={() => {
-        axios.post(ENDPOINT + '/deletefeedback/' + props.fb._id)
+        axios.post(ENDPOINT + '/deletefeedback/' + fb._id)
         .catch(e => console.error(e));
         window.location.reload();
       }}>X</button>
@@ -31,7 +31,7 @@ const FeedbackCard = (props: any) => {
 
 const ShowFeedbacks = () => {
   const { pw } = queryString.parse(window.location.search);
-  const [feedbacks = { fbs: [] }, setFeedbacks] = useState<{ fbs: object[] }>({ fbs: [] });
+  const [feedbacks, setFeedbacks] = useState<{ fbs: { option: string, name: string, contacts: string, details: string, _id: number }[] }>({ fbs: [] });
   const [currentCard, setCurrentCard] = useState<number>(0);
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const ShowFeedbacks = () => {
       setFeedbacks({ fbs: response.data });
     });
   }, []);
-    
+
   if (pw!==KEYWORD) {
     return <Handler404 />
   } else {
