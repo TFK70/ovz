@@ -69,7 +69,7 @@ const Details = () => {
           <Topic key={idx} theme="black" topic={i.topic} content={i.content} />
         )
       )}
-      <GoBack class="detailsBack">{"<"}</GoBack>
+      <GoBack classVal="detailsBack">{"<"}</GoBack>
     </div>
   );
 };

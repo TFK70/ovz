@@ -2,11 +2,11 @@ import React from "react";
 import "./GoBack.css";
 import { Link } from "react-router-dom";
 
-const GoBack = (props: any) => {
+const GoBack = ({ classVal, children }: { classVal?: string, children?: string }) => {
   return (
     <>
       <Link to="/">
-        <button className={props.class || "goback "}>{"<"}</button>
+        <button className={classVal || "goback "}>{"<"}</button>
       </Link>
     </>
   );

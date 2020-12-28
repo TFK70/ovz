@@ -1,14 +1,14 @@
-import React from "react";
+import React, { MouseEvent } from "react";
 import "./Button.css";
 
-const Button = (props: any) => {
+const Button = ({ type, clickEvent, classVal, val }: { type?: "button" | "submit" | "reset", clickEvent?: (event: MouseEvent<HTMLButtonElement>) => void, classVal?: string, val: string }) => {
   return (
     <button
-      type={props.type}
-      onClick={props.clickEvent}
-      className={"initialBut " + props.class}
+      type={type}
+      onClick={clickEvent}
+      className={"initialBut " + classVal}
     >
-      {props.val}
+      {val}
     </button>
   );
 };

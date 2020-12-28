@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, MouseEvent } from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 
-const useBg = (counters: number) => { 
+const useBg = (counters: number) => {
   const ref = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const Home = (props: any) => {
 
   const ref = useBg(counter);
 
-  const delayRedirectToChat = (event: any) => {
+  const delayRedirectToChat = (event: MouseEvent<HTMLAnchorElement>) => {
     const {
       history: { push },
     } = props;
@@ -44,7 +44,7 @@ const Home = (props: any) => {
     setTimeout(() => push("/chat"), 2000);
   };
 
-  const delayRedirectToDetails = (event: any) => {
+  const delayRedirectToDetails = (event: MouseEvent<HTMLAnchorElement>) => {
     const {
       history: { push },
     } = props;
@@ -52,7 +52,7 @@ const Home = (props: any) => {
     setTimeout(() => push("/details"), 2000);
   };
 
-  const delayRedirectToFeedback = (event: any) => {
+  const delayRedirectToFeedback = (event: MouseEvent<HTMLAnchorElement>) => {
     const {
       history: { push },
     } = props;
