@@ -1,2 +1,4 @@
 /node_modules
 /config
+/src/main.crt
+/src/private.key
